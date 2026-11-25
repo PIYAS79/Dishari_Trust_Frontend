@@ -1,26 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-forest: #06361A;
+  --color-dish: #0B5A2A;
+  --color-leaf: #2E8B3E;
+  --color-sprout: #8DC63F;
+  --color-gold: #D9A520;
+  --color-golddeep: #A87912;
+  --color-champ: #F3DC8A;
+  --color-ivory: #FBF8EF;
+  --color-mist: #EAF3E4;
+  --color-ink: #1D2B22;
+  --color-dim: #5B6B61;
+
+  --font-sans: var(--font-hind, "Hind Siliguri"), system-ui, sans-serif;
+  --font-serif: var(--font-serif-ns, "Source Serif 4"), Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html { scroll-behavior: smooth; font-size: 18px; }
+
+@keyframes rise {
+  from { transform: translateY(120px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+.sun { animation: rise 1.8s cubic-bezier(.2, .7, .2, 1) both; }
+.road { stroke-dasharray: 1; animation: draw 2.2s .5s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sun, .road { animation: none; }
+  .grow, .drawn { transition: none !important; transform: none !important; stroke-dashoffset: 0 !important; }
+  html { scroll-behavior: auto; }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+:focus-visible { outline: 3px solid #D9A520; outline-offset: 3px; }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 30s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
 }
