@@ -45,6 +45,47 @@ html { scroll-behavior: smooth; font-size: 18px; }
 .marquee-track { animation: marquee 30s linear infinite; }
 .marquee-track:hover { animation-play-state: paused; }
 
+.themed-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #dfb248 #0e2b1a;
+}
+.themed-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.themed-scrollbar::-webkit-scrollbar-track {
+  background: #0e2b1a;
+  border-radius: 9999px;
+}
+.themed-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e5b84b, #a87912);
+  border-radius: 9999px;
+  border: 1px solid #0e2b1a;
+}
+.themed-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #eec55c;
+}
+
+#facilities * {
+  scrollbar-width: thin;
+  scrollbar-color: #dfb248 #0e2b1a;
+}
+#facilities *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+#facilities *::-webkit-scrollbar-track {
+  background: #0e2b1a;
+  border-radius: 9999px;
+}
+#facilities *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #e5b84b, #a87912);
+  border-radius: 9999px;
+  border: 1px solid #0e2b1a;
+}
+#facilities *::-webkit-scrollbar-thumb:hover {
+  background: #eec55c;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
 }

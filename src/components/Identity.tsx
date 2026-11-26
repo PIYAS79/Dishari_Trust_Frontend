@@ -50,7 +50,7 @@ export default function Identity() {
             Our identity is rooted in service and compassion — creating a future beyond childhood, where every special adult is valued, supported and given the chance to thrive.
           </p>
           <a
-            href="#about"
+            href="/about"
             className="mt-8 inline-block rounded bg-dish px-6 py-3 font-medium text-ivory transition-colors hover:bg-forest"
           >
             Read more
